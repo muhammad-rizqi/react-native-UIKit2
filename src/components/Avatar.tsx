@@ -8,6 +8,7 @@ interface AvatarProps extends ImageProps {
   notificationColor?: string;
   buttonColor?: string;
   iconColor?: string;
+  iconName?: string;
 }
 
 const sizeValue = { xSmall: 24, small: 48, medium: 72, large: 120 };
@@ -19,6 +20,7 @@ const Avatar: FunctionComponent<AvatarProps> = ({
   size = "medium",
   style,
   iconColor,
+  iconName,
   buttonColor,
   ...props
 }) => {
@@ -64,7 +66,7 @@ const Avatar: FunctionComponent<AvatarProps> = ({
           alignItems: 'center',
           backgroundColor: buttonColor || '#17B582',
         }}>
-        <Icon name="plus" color={iconColor || 'white'} size={iconSize / 2} />
+        <Icon name={iconName || "plus"} color={iconColor || 'white'} size={iconSize / 2} />
       </TouchableOpacity>
     </View>
   );

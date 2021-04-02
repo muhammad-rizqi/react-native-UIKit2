@@ -37,6 +37,7 @@ const AvatarScreen = () => {
         notificationColor="#00676D"
         iconColor="white"
         buttonColor="#17B582"
+        iconName="camera"
       />
       <Avatar source={{ uri: 'https://ui-avatars.com/api/?background=random' }} />
     </View>
