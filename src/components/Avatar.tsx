@@ -7,19 +7,12 @@ interface AvatarProps extends ImageProps {
   notificationColor?: ColorValue
 }
 
+const sizeValue = { xSmall: 24, small: 48, medium: 72, large: 120 }
+
 const Avatar: FunctionComponent<AvatarProps> = ({ notification, notificationColor, size, style, ...props }) => {
   const passedProps = Array.isArray(props) ? Object.assign({}, ...props) : props;
   const passedStyles = Array.isArray(style) ? Object.assign({}, ...style) : style;
-  const imgSize =
-    size === 'xSmall'
-      ? 24
-      : size === 'small'
-        ? 48
-        : size === 'medium'
-          ? 72
-          : size === 'large'
-            ? 120
-            : size;
+  const imgSize = typeof size === 'number' ? size : sizeValue[size]
 
   return (
     <View style={notification && {
